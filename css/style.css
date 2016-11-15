@@ -313,8 +313,7 @@ a.small {
 }
 
 .artistinfo img {
-  width: 40%;
-  max-width: 130px;
+  width: 100%;
   border-radius: 20px;
 }
 
