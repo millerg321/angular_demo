@@ -1,13 +1,12 @@
 <section class="artistpage">
   <div class="search">
-    <h1>Artist Directory</h1>
+    <h1>Animal Photo Directory</h1>
     <label>search: </label>
-    <input ng-model="query" placeholder="Search for artists" autofocus>
+    <input ng-model="query" placeholder="Search for awesoime animal pictures" autofocus>
 
     <label class="formgroup">by:
       <select ng-model="artistOrder">
         <option value="name">Name</option>
-        <option value="reknown">Reknown</option>
       </select>
     </label>
 
@@ -27,7 +26,6 @@
         <img ng-src="images/cute_animals/{{item.image_name}}" alt="Photo of {{item.name}}">
         <div class="info">
           <h2>{{item.name}}</h2>
-          <h3>{{item.reknown}}</h3>
           <h3>{{item.image_name}}</h3>
         </div>
       </a>
