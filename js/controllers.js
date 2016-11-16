@@ -12,6 +12,12 @@ myControllers.controller('DetailsController', ['$scope', '$http','$routeParams',
     $scope.artists = data;
     $scope.whichItem = $routeParams.itemId;
 
+    $scope.ocelotMagic = false;
+
+    if ($scope.artists.image_name == "ocelot.png") {
+      $scope.ocelotMagic = true;
+    }
+
     if ($routeParams.itemId > 0) {
       $scope.prevItem = Number($routeParams.itemId)-1;
     } else {
