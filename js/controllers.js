@@ -12,11 +12,11 @@ myControllers.controller('DetailsController', ['$scope', '$http','$routeParams',
     $scope.artists = data;
     $scope.whichItem = $routeParams.itemId;
 
-    $scope.ocelotMagic = false;
+    var ocelotMagic = false;
 
     if ($scope.artists[$scope.whichItem].image_name == "ocelot.png") {
-      console.log("We got through the if")
-      $scope.ocelotMagic = true;
+      console.log("We got through the if");
+      ocelotMagic = true;
     }
 
     if ($routeParams.itemId > 0) {
