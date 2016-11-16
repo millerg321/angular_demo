@@ -13,6 +13,7 @@ myControllers.controller('DetailsController', ['$scope', '$http','$routeParams',
     $scope.whichItem = $routeParams.itemId;
 
     $scope.ocelotMagic = false;
+    console.log($scope.artists.image_name);
 
     if ($scope.artists.image_name == "ocelot.png") {
       $scope.ocelotMagic = true;
