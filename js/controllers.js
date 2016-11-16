@@ -15,6 +15,7 @@ myControllers.controller('DetailsController', ['$scope', '$http','$routeParams',
     $scope.ocelotMagic = false;
 
     if ($scope.artists[$scope.whichItem].image_name == "ocelot.png") {
+      console.log("We got through the if")
       $scope.ocelotMagic = true;
     }
 
