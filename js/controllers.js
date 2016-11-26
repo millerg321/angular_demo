@@ -1,16 +1,23 @@
-var artistControllers = angular.module('artistControllers', ['ngAnimate']);
+var myControllers = angular.module('myControllers', ['ngAnimate']);
 
-artistControllers.controller('ListController', ['$scope', '$http', function($scope, $http) {
+myControllers.controller('ListController', ['$scope', '$http', function($scope, $http) {
   $http.get('js/data.json').success(function(data) {
     $scope.artists = data;
     $scope.artistOrder = 'name';
   });
 }]);
 
-artistControllers.controller('DetailsController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
+myControllers.controller('DetailsController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
   $http.get('js/data.json').success(function(data) {
     $scope.artists = data;
     $scope.whichItem = $routeParams.itemId;
+
+    $scope.ocelotMagic = false;
+
+    if ($scope.artists[$scope.whichItem].image_name == "ocelot.png") {
+      console.log("We got through the if");
+      $scope.ocelotMagic = true;
+    }
 
     if ($routeParams.itemId > 0) {
       $scope.prevItem = Number($routeParams.itemId)-1;
@@ -25,5 +32,13 @@ artistControllers.controller('DetailsController', ['$scope', '$http','$routePara
     }
 
   });
+}]);
+
+myControllers.controller('YoutubeController', [function($scope) {
+  $scope.yt = {
+      width: 600, 
+      height: 480, 
+      videoid: "QAlSXpl_UtA",
+    };
 }]);
 
